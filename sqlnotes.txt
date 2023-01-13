@@ -1,0 +1,15 @@
+SELECT * FROM Customers;
+SELECT CustomerId,CustomerName MusteriAdi (Gelen cevapta bizim belirlediğimiz isim yazar),ContactName FROM Customers;
+SELECT * FROM Customers where City='London';
+SELECT * FROM Products where CategoryID=1 or Price <20;
+SELECT * FROM Products order by CategoryID,ProductName desc;
+SELECT count(*) FROM Products where CategoryID=2;
+SELECT CategoryID,count(*) Adet FROM Products group by CategoryID;
+SELECT CategoryID,count(*) Adet FROM Products where Price<20  group by CategoryID having count(*)<10;
+SELECT * from Products inner join Categories on Products.CategoryID=Categories.CategoryID;
+SELECT Products.ProductID,Products.ProductName,Products.Price,Categories.CategoryName from Products inner join Categories on Products.CategoryID=Categories.CategoryID where Products.Price>10;
+SELECT * from Customers c left join Orders o on c.CustomerID = o.CustomerID where o.CustomerId is null;
+
+
+
+
