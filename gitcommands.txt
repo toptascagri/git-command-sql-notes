@@ -1,0 +1,33 @@
+	Git
+-- Git bir versiyonlama kontrol sistemidir ve geliştirme süreçlerinin takibi için kullanılır.
+
+        Git Command
+
+git config --list  =>Kayıtlı email vb. bilgileri gösterir.
+git init => Repo yokken repo oluşturmayı sağlar.
+git status => Dosya durumu hakkında bilgi verir.(Takip ediliyor mu,hangi kısımda gibi)
+git add . /git add -A => Tüm dosyaları staged area'ya ekler.
+git commit -m 'Commit yorumu' => Staged area'da bulunan dosyaların local repo'ya eklenmesini sağlar.
+mv eskiISim yeniIsim => Dosya bazında isim değişikliği için kullanılır.(git eski dosya silinmiş,yeni dosya takip edilmiyor gibi davranır.)
+git restore --staged dosyaIsmi => Staged area'dan working directory dönüşünü sağlar.
+git restore dosyaIsmi => Son yapılan değişikleri geri alır.
+git show => Son commiti gösterir.
+git log => Tüm commitleri uzun bir bilgiyle beraber gösterir.
+git log --oneline => Tüm commitleri tek satır şeklinde gösterir.
+git checkout commitNo => Adresi girilen commite gider,orijinal kodda herhangi bir değişiklik yapmaz.
+git revert commitNo => Belirtilen commit yokmuş gibi davranır. (arada commit varsa onlar değişmez.)
+git reset -soft commitNo => Sadece working directory için geçerlidir. 
+git reset -mixed commitNo => Staged areada olan dosyalar için de geçerlidir.
+git reset -hard commitNo => Tüm alanlar için geçerlidir.
+git branch branchIsmi => Yeni branch oluşturmak için kullanılır.
+git rebase branchIsmi => Bir dalda yapılan tüm commitleri tıpkı öbür dalda da yapılmış gibi uygular.
+git push => Remote repoya göndermek için kullanılır.
+git remote add origin webAdresi => Remote repo ve local repo bağlantısını sağlar.
+git branch -M main => Branch ismini main yapar.
+git clome webAdresi => Girilen web adresinde bulunan repoyu lokalde oluşturur.
+git remote -v => Remote repo hakkında bilgi verir.
+git fetch => Remote repo üzerinde yapılmış değişiklikleri kopyalar, sonrasında ise git merge yapılır.
+git pull = git fetch + git merge
+git branch -d branchIsmi => İsmi girilen branch'i siler.
+
+*Bir satır üzerinde hem local repoda hem remote repoda çalışma yapıldıysa git push komutu hata döndürür ve local repoda nerede hangi değişiklik olduğu gösterilir. Hata düzeltildikten sonra git push komutu çalışır.
